@@ -48,6 +48,7 @@ def reverse_with_str(x):
         return 0
     return ret
 
+
 def reverse(x):
     pass
 
