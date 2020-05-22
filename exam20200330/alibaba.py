@@ -42,3 +42,15 @@ print(sum(res))
 
 # n,l = map(int,sys.stdin.readline().strip().split())
 # print(n, l)
+
+
+import sys
+try:
+    while True:
+        line = sys.stdin.readline().strip()
+        if line == '':
+            break
+        lines = line.split()
+        print(int(lines[0]) + int(lines[1]))
+except:
+    pass

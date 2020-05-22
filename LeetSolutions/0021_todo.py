@@ -3,7 +3,7 @@
 # @Author  : ForestNeo
 # @Site    : forestneo.com
 # @Email   : dr.forestneo@gmail.com
-# @File    : 0021.py
+# @File    : 0021_todo.py
 # @Software: PyCharm
 # @Function: 
 
@@ -22,6 +22,29 @@ class ListNode(object):
     def __init__(self, x):
         self.val = x
         self.next = None
+
+
+def mergeTwoLists_others(self, l1: ListNode, l2: ListNode) -> ListNode:
+    if l1 and l2:
+        if l1.val > l2.val: l1, l2 = l2, l1
+        l1.next = self.mergeTwoLists(l1.next, l2)
+    return l1 or l2
+
+
+def mergeTwoLists_others2(self, l1: ListNode, l2: ListNode) -> ListNode:
+    dummy = ListNode(0)
+    move = dummy
+    while l1 and l2:
+        if l1.val <= l2.val:
+            move.next = l1
+            l1 = l1.next
+        else:
+            move.next = l2
+            l2 = l2.next
+        move = move.next
+    move.next = l1 if l1 else l2
+    return dummy.next
+
 
 def mergeTwoLists(l1, l2):
     """
@@ -58,6 +81,8 @@ def print_ln(ln: ListNode):
     while ln:
         print(str(ln.val) + ", ", end="")
         ln = ln.next
+
+
 
 
 
