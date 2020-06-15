@@ -36,14 +36,16 @@ def twoSum_internet(nums, target):
     hashmap={}
     for ind,num in enumerate(nums):
         hashmap[num] = ind
+    print(hashmap)
     for i,num in enumerate(nums):
         j = hashmap.get(target - num)
+        print(j)
         if j is not None and i!=j:
             return [i,j]
 
 if __name__ == '__main__':
     a = [3,3,3,2,4]
     b = 6
-    twoSum_v2(a, b)
-    # print(twoSum_internet(a, b))
+    # twoSum_v2(a, b)
+    print(twoSum_internet(a, b))
 
