@@ -67,19 +67,17 @@ def numOfSubarrays_ok(arr, k, threshold):
         arr_sum = arr_sum - arr[start]
         start += 1
         arr_sum = arr_sum + arr[start+k-1]
+        print("now: ", start, start+k, arr[start:start+k], arr_sum)
         if arr_sum >= k * threshold:
             ret += 1
-
     return ret
 
 
 if __name__ == '__main__':
-    # arr = [2,2,2,2,5,5,5,8]
-    # k = 1
-    arr = [1,1,1,1]
+    arr = [2,2,2,2,5,5,5,8]
     k = 1
     threshold = 1
-    print(numOfSubarrays_new(arr, k, threshold))
+    print(numOfSubarrays_ok(arr, k, threshold))
 
 
 
