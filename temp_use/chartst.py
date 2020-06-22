@@ -7,17 +7,19 @@
 # @Software: PyCharm
 # @Function: 
 
+# row, col = 3, 5
+# visited = [[0] * col] * row
+# print(visited)
+# visited[1][1] = 1
+# print(visited)
 
+import numpy as np
 
-import sys
-input_str = "nhrwlbcc8m7c5hih9mhalw98k0322wf2jjm47kk3ntm9snfrflzzundn7d608usy049asxalzjk7izj6amcqhr8uubc04g52mcjboj2fmge2l6iarizfu4yve5o4i3srf5zgqbg82ckcotdeqp760mc9gzei5dzk5gj9x9yj05o3hle0ii64krkkp5i7blh7nbu3gu5vgi2scyn4yqx3z4vcjbyzhnqkh887izotjkg2l0mit0k14vyn39"
-char = 't'
-out = 0
-input_str = input_str.lower()
-for item in input_str:
-    if item == char:
-        out += 1
-print(out)
+a = np.zeros(shape=(3,2), dtype=bool)
+b = a.copy()
+a[0][0] = 1
+print(a)
+print(b)
+b = a.copy()
+print(b)
 
-if __name__ == '__main__':
-    pass
