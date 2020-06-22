@@ -33,7 +33,7 @@ def divide(numbers):
     while i + 1 < j:
         print(numbers[i:j+1])
         m = (i + j) // 2
-        if numbers[m] <= numbers[j] and numbers[i] <= numbers[m]:
+        if numbers[i] <= numbers[m] <= numbers[j]:
             j = j - 1
         elif numbers[m] > numbers[j]:
             i = m
