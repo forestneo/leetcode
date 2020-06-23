@@ -33,6 +33,11 @@ class Solution:
             res += n % 2
             n = n // 2
         return res
+    def hamming_new(self, n:int):
+        res = 0
+        while n:
+            pass
+
 
 if __name__ == '__main__':
     res = Solution()
