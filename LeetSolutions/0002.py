@@ -65,6 +65,36 @@ def myadd(l1, l2):
         tmp.next = new_node
     return head.next
 
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+
+class Solution:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        result_head = ListNode(0)
+        result_node = result_head
+
+        carry = 0
+        while l1 or l2:
+            value1, value2 = 0, 0
+            if l1:
+                value_1 = l1.val
+            if l2:
+                value_2 = l2.val
+            print(value_1, value_2)
+            new_value = (value_1 + value_2 + carry) % 10
+            carry= (value_1 + value_2 + carry) // 10
+            new_node = ListNode(new_value)
+            result_node.next = new_node
+            result_node = result_node.next
+            l1 = l1.next
+            l2 = l2.next
+        if carry == 1:
+            result_node.next = ListNode(carry)
+        return result_head.next
 
 
 if __name__ == '__main__':
