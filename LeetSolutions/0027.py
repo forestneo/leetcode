@@ -3,7 +3,7 @@
 # @Author  : ForestNeo
 # @Site    : forestneo.com
 # @Email   : dr.forestneo@gmail.com
-# @File    : 0027_todo.py
+# @File    : 0027.py
 # @Software: PyCharm
 # @Function: 
 
@@ -33,16 +33,26 @@ def removeElement(nums: list, val: int):
     """
     if len(nums) == 0 or (len(nums) == 1 and nums[0] == val):
         return 0
-    forward_index = 0
-    backward_index = len(nums) - 1
-    while forward_index < backward_index:
-        pass
+    i, j = 0, len(nums)-1
+    while i <= j:
+        if nums[i] != val:
+            i += 1
+            continue
+        if nums[j] == val:
+            j -= 1
+            continue
+        nums[i], nums[j] = nums[j], nums[i]
+        i += 1
+        j -= 1
+    return i
 
 
 if __name__ == '__main__':
-    nums = [0, 1, 2, 2, 3, 0, 4, 2]
+    # nums = [0, 1, 2, 2, 3, 0, 4, 2]
+    nums = [5,5,5]
     val = 5
     length = removeElement(nums, val)
+    print("length = ", length)
     for i in range(length):
         print(nums[i])
     pass
